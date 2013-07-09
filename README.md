@@ -6,7 +6,7 @@ Go library for the JcDecaux self-service bikes api
 Install
 -------
 
-	go get https://github.com/nodvos/go-jcdecaux.ssb/jcdecauxssb/
+	go get github.com/nodvos/go-jcdecaux.ssb/jcdecauxssb/
 
 Usage
 -----
