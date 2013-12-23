@@ -31,4 +31,6 @@ The full JcDecaux API is documented at https://developer.jcdecaux.com/#/opendata
 Testing
 -------
 
-Simply run 'go test'
+Simply run 'go test -key APIKEY'
+
+(See the official go test doc for more information)
