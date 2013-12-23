@@ -3,7 +3,7 @@ Package jcdecauxssb provides access to the JcDecaux self-serving bikes API.
 
 Create a new client this way:
 
-	client := JcDecaux.NewClient(APIKEY,nil)
+	client := jcdecauxssb.New(APIKEY,nil)
 
 With the client set, you can query the api this way:
 
@@ -18,6 +18,7 @@ With the client set, you can query the api this way:
 
 The full JcDecaux API is documented at https://developer.jcdecaux.com/#/opendata/vls?page=dynamic.
 */
+
 package jcdecauxssb
 
 import (

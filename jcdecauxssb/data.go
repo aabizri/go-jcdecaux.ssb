@@ -1,6 +1,9 @@
 package jcdecauxssb
 
-import "net/url"
+import (
+	"net/url"
+	"strconv"
+)
 
 // A contract is the service provided by JcDecaux to the city(es)
 type Contract struct {
@@ -74,12 +77,13 @@ func (c *Client) Stations(contract string) ([]Station, error) {
 }
 
 func (c *Client) StationData(contract string, number uint) (*Station, error) {
-
+	// Building the url, the path should look like that : stations/NUMBER?contract=CONTRACTNAME
 	params := url.Values{}
 	params.Add("contract", contract)
-	u := "stations?" + params.Encode()
+	u := "stations/" + strconv.FormatUint(uint64(number), 10) + "?" + params.Encode()
 
 	req, err := c.NewRequest("GET", u, "")
+
 	if err != nil {
 		return nil, err
 	}
