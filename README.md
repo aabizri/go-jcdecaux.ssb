@@ -13,7 +13,7 @@ Usage
 
 Create a new client this way:
 
-	client := JcDecaux.NewClient(APIKEY,nil)
+	client := jcdecauxssb.New(APIKEY,nil)
 
 With the client set, you can query the api this way:
 
@@ -24,6 +24,11 @@ With the client set, you can query the api this way:
 	// Retrieve my specific station
 	myStation := parisStations[42]
 	// Update it
-	myStation = client.Station("Paris",myStation.Number)
+	myStation = client.StationData("Paris",myStation.Number)
 
 The full JcDecaux API is documented at https://developer.jcdecaux.com/#/opendata/vls?page=dynamic.
+
+Testing
+-------
+
+Simply run 'go test'
