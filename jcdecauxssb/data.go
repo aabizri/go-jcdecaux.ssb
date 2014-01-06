@@ -1,3 +1,5 @@
+// Holds the data retrieving & processing aspects of the library
+
 package jcdecauxssb
 
 import (

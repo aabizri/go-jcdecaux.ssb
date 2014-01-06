@@ -1,3 +1,5 @@
+// Holds the networking aspects of the library
+
 package jcdecauxssb
 
 import (
