@@ -9,17 +9,16 @@ import (
 )
 
 const (
-	// LibraryVersion represents this library version
-	LibraryVersion = "2013.07.09"
-
 	// BaseURL represents JcDecaux API base URL
 	BaseURL = "https://api.jcdecaux.com/vls/v1/"
 
-	// UserAgent represents this client User-Agent
-	UserAgent = "go-jcdecaux/" + LibraryVersion
+	// The default User-Agent used in the library
+	// TODO: Add a library version
+	UserAgent = "go-jcdecaux/"
 )
 
 // A Client manages communication with the JcDecaux API.
+// It is the only way to "hack" the base URL
 type Client struct {
 	// HTTP client used to communicate with the API.
 	client *http.Client

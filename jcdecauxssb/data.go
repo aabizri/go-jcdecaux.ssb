@@ -53,6 +53,7 @@ func (c *Client) Contracts() ([]Contract, error) {
 	return *contracts, err
 }
 
+// Retrieves all stations of one or all contracts
 // If parameter == "" :
 //	Retrieves all stations of all contracts
 // Else:
@@ -78,6 +79,7 @@ func (c *Client) Stations(contract string) ([]Station, error) {
 	return *stations, err
 }
 
+// Retrieves the data about a single station
 func (c *Client) StationData(contract string, number uint) (*Station, error) {
 	// Building the url, the path should look like that : stations/NUMBER?contract=CONTRACTNAME
 	params := url.Values{}
