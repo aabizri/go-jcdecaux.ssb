@@ -33,18 +33,28 @@ type Client struct {
 	Key string
 }
 
-// New returns a new JcDecaux API client. If a nil httpClient is
-// provided, http.DefaultClient will be used.
-func New(key string, httpClient *http.Client) (*Client, error) {
+// Checks the key
+func CheckKey(key string) error {
+	// If there is no key, return an error
 	if key == "" {
-		return nil, errors.New("Key field must be populated")
+		return errors.New("Key field must be populated")
 	}
 
 	// As a key is 40 characters long, check for conformance
 	if len(key) != 40 {
-		return nil, errors.New("The key format is invalid, it must be 40 characters long")
+		return errors.New("The key format is invalid, it must be 40 characters long")
 	}
+	return nil
+}
 
+// New returns a new JcDecaux API client. If a nil httpClient is provided, http.DefaultClient will be used.
+func New(key string, httpClient *http.Client) (*Client, error) {
+
+	err := CheckKey(key) 
+	if err != nil {
+		return nil, err
+	}
+	
 	if httpClient == nil {
 		httpClient = http.DefaultClient
 	}
